@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Sentiment Analysis System</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f2f2f2;
+        }
+        textarea {
+            width: 400px;
+            height: 120px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            background: white;
+            display: inline-block;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Optimized Sentiment Analysis & Decision System</h1>
+
+    <form action="/predict" method="post">
+        <textarea name="review" placeholder="Enter product review..."></textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if sentiment %}
+        <div class="result">
+            <p><b>Sentiment:</b> {{ sentiment }}</p>
+            <p><b>Decision:</b> {{ decision }}</p>
+            <p><b>Confidence:</b> {{ confidence }}%</p>
+            <p><b>Confidence Level:</b> {{ trust }}</p>
+            <p><b>Review Length:</b> {{ length }} words</p>
+            <p><b>Key Words:</b> {{ keywords }}</p>
+        </div>
+    {% endif %}
+
+</body>
+</html>
